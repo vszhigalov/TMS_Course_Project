@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/python3
 
 '''
 EC2 external inventory script
@@ -119,7 +119,9 @@ from boto import elasticache
 from boto import route53
 import six
 
-from ansible.module_utils import ec2 as ec2_utils
+from ansible.module_utils import six
+#from ansible.module_utils import ec2 as ec2_utils
+from ansible.module_utils.six.moves import configparser
 
 HAS_BOTO3 = False
 try:
