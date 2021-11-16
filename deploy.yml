@@ -34,7 +34,7 @@
 
 #     - name: Pull default Docker image
 #       docker_image:
-#         name: jekanik/myhello:tagname
+#         name: vzhyhalau/httpd:tagname
 #         source: pull
     - debug: msg="{{ lookup('env','BUILD_NUMBER') }}"
     - name: stop nginx
