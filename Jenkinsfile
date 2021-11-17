@@ -17,7 +17,7 @@ pipeline {
     stages {
       stage('Notification on Slack Start') {
             steps {
-                slackSend channel: '#test', message: 'Job Start', blocks: [
+                slackSend channel: '#cicd-devops', message: '[${JOB_NAME}]Job Start', blocks: [
                     [
                       "type": "section",
                       "text": [
@@ -58,7 +58,7 @@ pipeline {
         }
        stage('Notification on Slack Comleted build/push image') {
             steps {
-                slackSend channel: '#test', message: 'Job processed', blocks: [
+                slackSend channel: '#cicd-devops', message: '[${JOB_NAME}]Build&Push image completed', blocks: [
                     [
                       "type": "section",
                       "text": [
@@ -78,7 +78,7 @@ pipeline {
              }
        stage('Notification on Slack start ec2.py and run Ansible-playbook') {
             steps {
-                slackSend channel: '#test', message: 'Job processed', blocks: [
+                slackSend channel: '#cicd-devops', message: '[${JOB_NAME}]Run Ansible-playbook', blocks: [
                     [
                       "type": "section",
                       "text": [
@@ -114,7 +114,7 @@ pipeline {
 
        stage('Notification on Slack finish Job') {
             steps {
-                slackSend channel: '#test', message: 'Job finish', blocks: [
+                slackSend channel: '#[${JOB_NAME}]', message: '[${JOB_NAME}]Job finish', blocks: [
                     [
                       "type": "section",
                       "text": [
