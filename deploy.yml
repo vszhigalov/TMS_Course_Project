@@ -1,5 +1,5 @@
 ---
-- hosts: tag_Owner_vzhyhalau
+- hosts: tag_Name_WebServer
   become: true
   vars:
     create_containers: 1
