@@ -78,7 +78,7 @@ pipeline {
              }
        stage('Notification on Slack start ec2.py and run Ansible-playbook') {
             steps {
-                slackSend channel: '#cicd-devops', message: "Job ${env.JOB_NAME} build ${env.BUILD_NUMBER} run Ansible-playbook", blocks: [
+                slackSend channel: '#cicd-devops', message: "*${currentBuild.currentResult}:* Job ${env.JOB_NAME} build ${env.BUILD_NUMBER} run Ansible-playbook", blocks: [
                     [
                       "type": "section",
                       "text": [
